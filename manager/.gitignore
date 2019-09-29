@@ -2,3 +2,4 @@
 manager-console/target/
 manager-entity/target/
 manager-service/target/
+.idea
