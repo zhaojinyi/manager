@@ -1,4 +1,4 @@
-﻿target/
+target/
 logs/
 setup/
 !.mvn/wrapper/maven-wrapper.jar
@@ -11,3 +11,5 @@ jcubeboot-bgworker/target
 ##引起报错的文件##
 jcubeboot-websocket/target/classes/static/
 jcubeboot-websocket/target/classes/templates/
+manager/manager-common/target/classes/com/csz/SequenceGeneratorUtil.class
+manager/manager.log.1
