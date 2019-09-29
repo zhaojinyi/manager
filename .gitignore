@@ -1,0 +1,13 @@
+﻿target/
+logs/
+setup/
+!.mvn/wrapper/maven-wrapper.jar
+jcubeboot-websocket/target
+jcubeboot-bgworker/target
+
+
+
+
+##引起报错的文件##
+jcubeboot-websocket/target/classes/static/
+jcubeboot-websocket/target/classes/templates/
