@@ -27,7 +27,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
-        <swagger.version>2.8.0</swagger.version>
+        <swagger.version>2.2.2</swagger.version>
         <mybatis-plus.version>3.0.1</mybatis-plus.version>
         <druid.version>1.0.29</druid.version>
         <fastjson.version>1.2.47</fastjson.version>

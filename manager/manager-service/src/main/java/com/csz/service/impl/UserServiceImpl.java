@@ -27,7 +27,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public List<User> listUser() {
-        return userMapper.selectList(new QueryWrapper<>());
+        return userMapper.selectUser();
     }
 
 

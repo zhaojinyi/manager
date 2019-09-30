@@ -52,6 +52,7 @@ public class ShiroConfigBean {
         filterChainDefinitionMap.put("/role/addRole", "anon");
         filterChainDefinitionMap.put("/priv/addPriv", "anon");
         filterChainDefinitionMap.put("/users/addUser", "anon");
+        filterChainDefinitionMap.put("/users/list", "anon");
 
         filterChainDefinitionMap.put("/Exception.class", "anon");
         // 我写的url一般都是xxx.action，根据你的情况自己修改

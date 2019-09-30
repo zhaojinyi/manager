@@ -7,4 +7,9 @@
 
     </resultMap>
 
+    <select id="selectUser" resultMap="BaseResultMap">
+        select * from sys_user
+    </select>
+
+
 </mapper>
