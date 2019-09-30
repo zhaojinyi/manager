@@ -1,4 +1,4 @@
-﻿manager/manager-common/target/classes/com/csz/SequenceGeneratorUtil.class
+manager/manager-common/target/classes/com/csz/SequenceGeneratorUtil.class
 manager/manager.log.1
 manager/manager-common/target/
 manager/manager-console/target/
@@ -10,3 +10,4 @@ manager/manager-console/manager-console.iml
 manager/manager-service/manager-service.iml
 
 manager/.idea
+manager/manager.iml
