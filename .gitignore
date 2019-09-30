@@ -2,6 +2,11 @@
 manager/manager.log.1
 manager/manager-common/target/
 manager/manager-console/target/
-manager/manager-entity/target/
 manager/manager-service/target/
+manager/manager-entity/target/
+manager/manager-entity/manager-entity.iml
+manager/manager-common/manager-common.iml
+manager/manager-console/manager-console.iml
+manager/manager-service/manager-service.iml
+
 manager/.idea
