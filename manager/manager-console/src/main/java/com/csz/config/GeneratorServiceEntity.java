@@ -27,13 +27,13 @@ public class GeneratorServiceEntity {
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String userName = "root";
     private static final String password = "123456";
-    private static final String table_name = "sys_user";
+    private static final String table_name = "back_moneys";
 
     //表对应的基类名
-    private static final String entityName = "User";
+    private static final String entityName = "BackMoneys";
 
     //如StudentController,StudentService
-    private static final String name_prex = "User";
+    private static final String name_prex = "BackMoneys";
 
     //生成在该目录下
     private static final String package_name = "com.csz";

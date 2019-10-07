@@ -1,8 +1,6 @@
 package com.csz.console;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.csz.PasswordUtil;
 import com.csz.Util.CommonSearchDto;
 import com.csz.entity.User;
 import com.csz.exception.FriendException;
@@ -12,7 +10,6 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 /**
  * @Auther: 无聊的人
@@ -28,8 +25,8 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation(value = "查询用户列表")
-    @PostMapping("/list")
-    public Page<User> listUser(@RequestBody CommonSearchDto<User> commonSearchDto) {
+    @PostMapping("/page")
+    public Page<User> pageUser(@RequestBody CommonSearchDto<User> commonSearchDto) {
         return userService.pageUser(commonSearchDto);
     }
 
@@ -61,4 +58,5 @@ public class UserController {
             throw new FriendException("删除失败");
         }
     }
+
 }
