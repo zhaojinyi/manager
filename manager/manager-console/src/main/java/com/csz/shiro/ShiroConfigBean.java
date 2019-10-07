@@ -49,8 +49,6 @@ public class ShiroConfigBean {
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/druid/login.html", "anon");
         filterChainDefinitionMap.put("/login", "anon");
-        filterChainDefinitionMap.put("/role/addRole", "anon");
-        filterChainDefinitionMap.put("/priv/addPriv", "anon");
         filterChainDefinitionMap.put("/users/addUser", "anon");
         filterChainDefinitionMap.put("/users/list", "anon");
 
@@ -63,7 +61,7 @@ public class ShiroConfigBean {
         filterChainDefinitionMap.put("/admin.html", "roles[admin]");
         // filterChainDefinitionMap.put("/user.html", "roles[user]");
         // 最后一班都，固定格式
-        filterChainDefinitionMap.put("/**", "authc");
+//        filterChainDefinitionMap.put("/**", "authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

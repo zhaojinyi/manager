@@ -1,6 +1,6 @@
 package com.csz.console;
 
-import com.csz.dto.UserDto;
+import com.csz.entity.User;
 import com.csz.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -9,12 +9,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.util.Map;
 
 /**
  * @Auther: 无聊的人
@@ -29,15 +23,14 @@ public class LoginController {
 
     @PostMapping("/login")
     @ResponseBody
-    public String login(@RequestBody UserDto userDto) {
-        System.out.println(userDto);
+    public String login(@RequestBody User user) {
         // 获得当前Subject
         Subject currentUser = SecurityUtils.getSubject();
         // 验证用户是否验证，即是否登录
         if (!currentUser.isAuthenticated()) {
             String msg = "";
             // 把用户名和密码封装为 UsernamePasswordToken 对象
-            UsernamePasswordToken token = new UsernamePasswordToken(userDto.getUsername(), userDto.getPassword());
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
 
             // remembermMe记住密码
             token.setRememberMe(true);

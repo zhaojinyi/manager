@@ -23,17 +23,17 @@ public class GeneratorServiceEntity {
     private static final String author = "JinYiZhao";
 
     //数据库
-    private static final String url = "jdbc:mysql://localhost:3306/manager?useUnicode=true&useSSL=false&characterEncoding=utf8";
+    private static final String url = "jdbc:mysql://122.51.12.232:3306/taoke?useUnicode=true&useSSL=false&characterEncoding=utf8";
     private static final String driverName = "com.mysql.jdbc.Driver";
     private static final String userName = "root";
-    private static final String password = "812912";
-    private static final String table_name = "sys_role_priv";
+    private static final String password = "123456";
+    private static final String table_name = "sys_user";
 
     //表对应的基类名
-    private static final String entityName = "RolePrivRelation";
+    private static final String entityName = "User";
 
     //如StudentController,StudentService
-    private static final String name_prex = "RolePrivRelation";
+    private static final String name_prex = "User";
 
     //生成在该目录下
     private static final String package_name = "com.csz";

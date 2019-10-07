@@ -29,12 +29,12 @@ public class AllException {
         // return "/abc";
     }
 
-    // 其它异常异常捕捉
-    @ExceptionHandler(value = Exception.class)
-    @ResponseBody // 在返回自定义相应类的情况下必须有，这是@ControllerAdvice注解的规定
-    public String allException(Exception e) {
-        System.out.println("---------------------->" + e);
-        return "系統出现异常！！！";
-    }
+//    // 其它异常异常捕捉
+//    @ExceptionHandler(value = Exception.class)
+//    @ResponseBody // 在返回自定义相应类的情况下必须有，这是@ControllerAdvice注解的规定
+//    public String allException(Exception e) {
+//        System.out.println("---------------------->" + e);
+//        return "系統出现异常！！！";
+//    }
 
 }

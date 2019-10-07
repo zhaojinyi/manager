@@ -8,9 +8,9 @@ spring:
   datasource:
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://192.168.0.122:3306/manager?useUnicode=true&characterEncoding=UTF-8
+      url: jdbc:mysql://122.51.12.232:3306/taoke?useUnicode=true&characterEncoding=UTF-8
       username: root
-      password: 812912
+      password: 123456
       # 配置监控统计拦截的filters,去掉后，监控界面的sql无法统计
       filters: stat,wall,log4j
       dbcp2:

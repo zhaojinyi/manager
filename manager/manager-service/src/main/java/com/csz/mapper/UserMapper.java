@@ -1,18 +1,19 @@
 package com.csz.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.csz.entity.User;
-import org.apache.ibatis.annotations.Select;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;
 
 /**
- * @Auther: 无聊的人
- * @Date: 2019/9/28
- * @Description: com.csz.mapper
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author JinYiZhao
+ * @since 2019-10-01
  */
-public interface UserMapper extends BaseMapper<User>{
-
-    List<User> selectUser();
+public interface UserMapper extends BaseMapper<User> {
 
 }

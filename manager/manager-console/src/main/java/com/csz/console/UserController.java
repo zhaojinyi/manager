@@ -1,13 +1,14 @@
 package com.csz.console;
 
-import com.csz.dto.UserConvert;
-import com.csz.dto.UserDto;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.csz.Util.CommonSearchDto;
 import com.csz.entity.User;
+import com.csz.exception.FriendException;
 import com.csz.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,18 +26,36 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserConvert userConvert;
-
     @ApiOperation(value = "查询用户列表")
-    @GetMapping("/list")
-    public List<UserDto> listUser() {
-        return userConvert.listEntityToDto(userService.listUser());
+    @PostMapping("/list")
+    public Page<User> listUser(@RequestBody CommonSearchDto<User> commonSearchDto) {
+        return userService.pageUser(commonSearchDto);
     }
 
     @ApiOperation(value = "添加用户")
     @PostMapping("addUser")
-    public void addUser(@RequestBody UserDto userDto) {
-        userService.addUser(userConvert.dtoToEntity(userDto));
+    public void addUser(@RequestBody User user) {
+        userService.addUser(user);
+    }
+
+    @ApiOperation(value = "更新用户")
+    @PostMapping("updUser")
+    public void updUser(@RequestBody User user) {
+        userService.updateById(user);
+    }
+
+    @ApiOperation(value = "根据id查询用户")
+    @GetMapping("getUserById")
+    public User getUserById(@RequestParam("id") Integer id) {
+        return userService.getById(id);
+    }
+
+    @ApiOperation(value = "根据id删除用户")
+    @GetMapping("delUser")
+    public void delUser(@RequestParam("id") Integer id) {
+        boolean b = userService.removeById(id);
+        if(!b) {
+            throw new FriendException("删除失败");
+        }
     }
 }
