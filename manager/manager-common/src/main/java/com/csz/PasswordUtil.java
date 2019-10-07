@@ -15,7 +15,7 @@ import org.apache.shiro.util.ByteSource;
 public class PasswordUtil {
 
     private RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
-    public static final String ALGORITHM_NAME = "MD5"; // 基础散列算法
+    public static final String ALGORITHM_NAME = "md5"; // 基础散列算法
     public static final int HASH_ITERATIONS = 1024; // 自定义散列次数
 
     public static void encryptPassword(User user) {
@@ -24,13 +24,6 @@ public class PasswordUtil {
         //  加密算法   密码   盐值  加密次数
         String newPassword = new SimpleHash(ALGORITHM_NAME, user.getPassword(),
                 ByteSource.Util.bytes(user.getSalt()), HASH_ITERATIONS).toHex();
-        user.setPassword(newPassword);
-    }
-
-    public static void decryptPassword(User user) {
-
-        String newPassword  = new SimpleHash(ALGORITHM_NAME, user.getPassword(),
-                user.getSalt(), HASH_ITERATIONS).toHex();
         user.setPassword(newPassword);
     }
 

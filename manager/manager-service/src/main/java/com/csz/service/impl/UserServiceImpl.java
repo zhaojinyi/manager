@@ -40,7 +40,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public void addUser(User user) {
-        PasswordUtil.encryptPassword(user);
+        user.setIsDelete(0);
         userMapper.insert(user);
     }
 }

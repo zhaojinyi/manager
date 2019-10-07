@@ -2,6 +2,7 @@ package com.csz.console;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.csz.PasswordUtil;
 import com.csz.Util.CommonSearchDto;
 import com.csz.entity.User;
 import com.csz.exception.FriendException;
@@ -46,8 +47,10 @@ public class UserController {
 
     @ApiOperation(value = "根据id查询用户")
     @GetMapping("getUserById")
-    public User getUserById(@RequestParam("id") Integer id) {
-        return userService.getById(id);
+    public User getUserById(@RequestParam("id") Integer id){
+        User user = userService.getById(id);
+        return user;
+//        return userService.getById(id);
     }
 
     @ApiOperation(value = "根据id删除用户")

@@ -28,8 +28,6 @@ public class User implements Serializable {
     @TableId(type = IdType.AUTO)
     private int id;
 
-    private String salt;
-
     /**
      * 登录账号
      */
@@ -66,4 +64,9 @@ public class User implements Serializable {
      * 用户对应的角色
      */
     private Integer userRole;
+
+    /**
+     * 是否注销
+     */
+    private Integer isDelete;
 }
