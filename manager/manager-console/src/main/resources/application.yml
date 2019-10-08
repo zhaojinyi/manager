@@ -2,7 +2,7 @@
 ####  swagger-ui的调试端口      http://localhost:8081/manager/docs.html
 ####  数据库连接池监控页面     http://localhost:8081/manager/druid/login.html
 server:
-  port: 8080
+  port: 8080 
 debug: true
 spring:
   datasource:
