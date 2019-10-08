@@ -31,4 +31,29 @@ public class PageDto{
     public void setPageNum(Integer pageNum) {
         this.pageNum = pageNum;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PageDto pageDto = (PageDto) o;
+        return Objects.equals(pageSize, pageDto.pageSize) &&
+                Objects.equals(pageNum, pageDto.pageNum);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(pageSize, pageNum);
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "PageDto{" +
+                "pageSize=" + pageSize +
+                ", pageNum=" + pageNum +
+                '}';
+    }
 }

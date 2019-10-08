@@ -32,5 +32,12 @@ public class Dept implements Serializable {
      */
     private String deptName;
 
+    /**
+     * 部门领导
+     */
+    private String leaderName;
+
+    private Integer leaderId;
+
 
 }

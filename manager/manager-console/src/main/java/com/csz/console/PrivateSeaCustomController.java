@@ -37,7 +37,7 @@ public class PrivateSeaCustomController {
     public void updPrivateSeaCustom(@RequestBody PrivateSeaCustom privateSeaCustom) {
         boolean b = privateSeaCustomService.updateById(privateSeaCustom);
         if(!b) {
-            throw new FriendException("更新四海用户失败");
+            throw new FriendException("更新私海用户失败");
         }
     }
 
@@ -45,7 +45,7 @@ public class PrivateSeaCustomController {
     public void delPrivateSeaCustomById(@RequestParam("id") Integer id) {
         boolean b = privateSeaCustomService.removeById(id);
         if(!b) {
-            throw new FriendException("更新四海用户失败");
+            throw new FriendException("删除私海用户失败");
         }
     }
 

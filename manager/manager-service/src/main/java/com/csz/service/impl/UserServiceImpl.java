@@ -33,8 +33,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         Page<User> page = commonSearchDto.getPageToSearch();
         QueryWrapper<User> wrapper = commonSearchDto.createWrapper();
-        page = (Page)userMapper.selectPage(page, wrapper);
-        page.setTotal(userMapper.selectCount(wrapper));
+        page =(Page) userMapper.selectPage(page, wrapper);
         return page;
     }
 

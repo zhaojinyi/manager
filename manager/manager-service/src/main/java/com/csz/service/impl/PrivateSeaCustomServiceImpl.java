@@ -7,8 +7,11 @@ import com.csz.entity.PrivateSeaCustom;
 import com.csz.mapper.PrivateSeaCustomMapper;
 import com.csz.service.PrivateSeaCustomService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.csz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * <p>
@@ -22,7 +25,9 @@ import org.springframework.stereotype.Service;
 public class PrivateSeaCustomServiceImpl extends ServiceImpl<PrivateSeaCustomMapper, PrivateSeaCustom> implements PrivateSeaCustomService {
 
 
-    @Autowired
+    @Resource
+    private UserService userService;
+    @Resource
     private PrivateSeaCustomMapper privateSeaCustomMapper;
 
     @Override
@@ -31,7 +36,9 @@ public class PrivateSeaCustomServiceImpl extends ServiceImpl<PrivateSeaCustomMap
         Page<PrivateSeaCustom> page = commonSearchDto.getPageToSearch();
         QueryWrapper<PrivateSeaCustom> wrapper = commonSearchDto.createWrapper();
         page = (Page)privateSeaCustomMapper.selectPage(page, wrapper);
-        page.setTotal(privateSeaCustomMapper.selectCount(wrapper));
+        for(PrivateSeaCustom privateSeaCustom: page.getRecords()) {
+            privateSeaCustom.setOperatorUser(userService.getById(privateSeaCustom.getOperatorUserId()));
+        }
 
         return page;
     }

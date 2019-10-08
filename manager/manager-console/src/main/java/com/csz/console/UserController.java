@@ -1,5 +1,6 @@
 package com.csz.console;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.csz.Util.CommonSearchDto;
 import com.csz.entity.User;
@@ -27,6 +28,7 @@ public class UserController {
     @ApiOperation(value = "查询用户列表")
     @PostMapping("/page")
     public Page<User> pageUser(@RequestBody CommonSearchDto<User> commonSearchDto) {
+        System.out.println(commonSearchDto+"---------------");
         return userService.pageUser(commonSearchDto);
     }
 

@@ -97,7 +97,7 @@ public class PrivateSeaCustom implements Serializable {
     /**
      * 回款时间
      */
-    private String refundsTime;
+    private LocalDateTime refundsTime;
 
     /**
      * 回款金额
@@ -107,7 +107,7 @@ public class PrivateSeaCustom implements Serializable {
     /**
      * 创建时间
      */
-    private String createTime;
+    private LocalDateTime createTime;
 
     /**
      * 资料类型
@@ -118,6 +118,8 @@ public class PrivateSeaCustom implements Serializable {
      * 操作人
      */
     private Integer operatorUserId;
+
+    private User operatorUser;
 
     /**
      * 30天推广量

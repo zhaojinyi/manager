@@ -1,5 +1,7 @@
 package com.csz.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.csz.Util.CommonSearchDto;
 import com.csz.entity.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface DeptService extends IService<Dept> {
 
+    Page<Dept> pageDept(CommonSearchDto<Dept> commonSearchDto);
 }

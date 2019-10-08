@@ -111,7 +111,7 @@ public class CommonSearchDto<T> {
             }
         }
 
-        if (this.orderBy != null) {
+        if (this.orderBy != "") {
             String[] orderByInfo = this.orderBy.split(" ");
             curOp = orderByInfo[0];
             if (orderByInfo.length >= 2 && orderByInfo[1].toLowerCase().equals("asc")) {
@@ -124,14 +124,18 @@ public class CommonSearchDto<T> {
         return ew;
     }
 
-    @JSONField(
-            serialize = false
-    )
     public Page<T> getPageToSearch() {
-        System.out.println(this.page);
+
         return this.page == null ? new Page(0, 10) : new Page(this.page.getPageNum(), this.page.getPageSize());
     }
 
+    public PageDto getPage() {
+        return page;
+    }
+
+    public void setPage(PageDto page) {
+        this.page = page;
+    }
 
     public Map<String, Object> getForm() {
         return form;
@@ -163,5 +167,16 @@ public class CommonSearchDto<T> {
 
     public void setCon(Map<String, String> con) {
         this.con = con;
+    }
+
+    @Override
+    public String toString() {
+        return "CommonSearchDto{" +
+                "page=" + page +
+                ", form=" + form +
+                ", op=" + op +
+                ", con=" + con +
+                ", orderBy='" + orderBy + '\'' +
+                '}';
     }
 }
