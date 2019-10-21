@@ -29,8 +29,8 @@ spring:
       freemarker:
           cache: false  # 页面不加缓存，修改及时生效
 mybatis-plus:
-  type-aliases-package: com.csz.entity
-  mapperLocations: classpath*:com/csz/**/xml/*.xml
+  type-aliases-package: com.zjy.entity
+  mapperLocations: classpath*:com/zjy/**/xml/*.xml
   global-config:
       id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
       logic-delete-value: 1
